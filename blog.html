@@ -6,6 +6,8 @@
     <title>Geekaz Blog | Tech Insights & News</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- Add EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -37,12 +39,12 @@
     <section class="blog-categories">
         <div class="container">
             <ul class="category-list">
-                <li><a href="#" class="active">All</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Development</a></li>
-                <li><a href="#">Security</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Innovation</a></li>
+                <li><a href="#" class="active" data-category="all">All</a></li>
+                <li><a href="#" data-category="technology">Technology</a></li>
+                <li><a href="#" data-category="development">Development</a></li>
+                <li><a href="#" data-category="security">Security</a></li>
+                <li><a href="#" data-category="business">Business</a></li>
+                <li><a href="#" data-category="design">Design</a></li>
             </ul>
         </div>
     </section>
@@ -72,9 +74,9 @@
     <!-- Main Blog Content -->
     <section class="blog-content">
         <div class="container">
-            <div class="blog-grid">
+            <div class="blog-grid" id="blogGrid">
                 <!-- Post 1 -->
-                <div class="blog-card">
+                <div class="blog-card" data-category="technology">
                     <div class="blog-image">
                         <img src="/api/placeholder/600/400" alt="AI in Business">
                     </div>
@@ -90,7 +92,7 @@
                 </div>
                 
                 <!-- Post 2 -->
-                <div class="blog-card">
+                <div class="blog-card" data-category="security">
                     <div class="blog-image">
                         <img src="/api/placeholder/600/400" alt="Cybersecurity Challenges">
                     </div>
@@ -106,7 +108,7 @@
                 </div>
                 
                 <!-- Post 3 -->
-                <div class="blog-card">
+                <div class="blog-card" data-category="development">
                     <div class="blog-image">
                         <img src="/api/placeholder/600/400" alt="Mobile Development">
                     </div>
@@ -122,7 +124,7 @@
                 </div>
                 
                 <!-- Post 4 -->
-                <div class="blog-card">
+                <div class="blog-card" data-category="technology">
                     <div class="blog-image">
                         <img src="/api/placeholder/600/400" alt="Cloud Computing">
                     </div>
@@ -138,7 +140,7 @@
                 </div>
                 
                 <!-- Post 5 -->
-                <div class="blog-card">
+                <div class="blog-card" data-category="security">
                     <div class="blog-image">
                         <img src="/api/placeholder/600/400" alt="Data Privacy">
                     </div>
@@ -154,7 +156,7 @@
                 </div>
                 
                 <!-- Post 6 -->
-                <div class="blog-card">
+                <div class="blog-card" data-category="design">
                     <div class="blog-image">
                         <img src="/api/placeholder/600/400" alt="UX Design">
                     </div>
@@ -172,10 +174,10 @@
             
             <!-- Pagination -->
             <div class="blog-pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#" class="pagination-next">Next →</a>
+                <a href="#" class="active" data-page="1">1</a>
+                <a href="#" data-page="2">2</a>
+                <a href="#" data-page="3">3</a>
+                <a href="#" class="pagination-next" data-page="next">Next →</a>
             </div>
         </div>
     </section>
@@ -186,8 +188,8 @@
             <div class="newsletter-content">
                 <h2>Stay Updated</h2>
                 <p>Subscribe to our newsletter to receive the latest insights and updates directly in your inbox.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Your email address" required id="newsletterEmail">
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
             </div>
