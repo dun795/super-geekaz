@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development | Geekaz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to service pages */
+        .service-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(249, 115, 22, 0.1));
+            text-align: center;
+        }
+        
+        .service-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .service-hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card i {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .process {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+        
+        .process-step h3 {
+            margin-bottom: 15px;
+        }
+        
+        .recent-work {
+            padding: 80px 0;
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .work-card {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+        
+        .work-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .work-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .work-card:hover .work-overlay {
+            transform: translateY(0);
+        }
+        
+        .cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(249, 115, 22, 0.1));
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 32px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Geekaz</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="blog.html">blog</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Web Development</h1>
+            <p>Custom, responsive websites and web applications built with the latest technologies and best practices to help your business succeed online.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Get a Quote</a>
+                <a href="#process" class="btn btn-secondary">Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Offer</h2>
+                <p>Our web development services are designed to deliver exceptional digital experiences that drive business growth.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i>🎨</i>
+                    <h3>Custom Design</h3>
+                    <p>Unique, brand-aligned designs that capture your vision and engage your audience effectively.</p>
+                </div>
+                <div class="feature-card">
+                    <i>📱</i>
+                    <h3>Responsive Development</h3>
+                    <p>Websites that look and function perfectly on all devices, from smartphones to desktop computers.</p>
+                </div>
+                <div class="feature-card">
+                    <i>⚡</i>
+                    <h3>Performance Optimization</h3>
+                    <p>Fast-loading websites optimized for speed and performance to improve user experience and SEO.</p>
+                </div>
+                <div class="feature-card">
+                    <i>🔒</i>
+                    <h3>Security Implementation</h3>
+                    <p>Robust security measures to protect your website and user data from threats and vulnerabilities.</p>
+                </div>
+                <div class="feature-card">
+                    <i>🔍</i>
+                    <h3>SEO-Friendly Structure</h3>
+                    <p>Built-in search engine optimization to help your website rank higher in search results.</p>
+                </div>
+                <div class="feature-card">
+                    <i>🔄</i>
+                    <h3>Content Management</h3>
+                    <p>Easy-to-use content management systems that give you control over your website's content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Development Process</h2>
+                <p>We follow a structured approach to ensure your project is delivered on time, within budget, and to your satisfaction.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We begin by understanding your business goals, target audience, and project requirements.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Planning</h3>
+                    <p>We create a detailed project plan, including sitemap, wireframes, and technical specifications.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Design</h3>
+                    <p>Our designers create visually compelling mockups that align with your brand identity.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Development</h3>
+                    <p>Our developers bring the designs to life with clean, efficient, and maintainable code.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Testing</h3>
+                    <p>We thoroughly test the website for functionality, compatibility, and performance issues.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Launch</h3>
+                    <p>After your approval, we deploy the website and provide training on its management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Work Section -->
+    <section class="recent-work">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent Projects</h2>
+                <p>Explore some of our latest web development projects that showcase our expertise and creativity.</p>
+            </div>
+            <div class="work-grid">
+                <div class="work-card">
+                    <img src="images/eco.jpg" alt="E-commerce Website">
+                    <div class="work-overlay">
+                        <h3>E-commerce Platform</h3>
+                        <p>A fully responsive online store with seamless checkout experience.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img src="images/copo.jpg" alt="Corporate Website">
+                    <div class="work-overlay">
+                        <h3>Corporate Website</h3>
+                        <p>Modern, professional website for a multinational company.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <img src="images/web.jpg" alt="Web Application">
+                    <div class="work-overlay">
+                        <h3>SaaS Application</h3>
+                        <p>Custom web application with user authentication and data visualization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Start Your Web Project?</h2>
+            <p>Contact us today to discuss your web development needs and get a free consultation and quote.</p>
+            <a href="index.html#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Geekaz</h4>
+                    <p>Innovative solutions for tomorrow's challenges. We help businesses transform and thrive in the digital age.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="blog.html">blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="web.html">Web Development</a></li>
+                        <li><a href="mobile.html">Mobile Applications</a></li>
+                        <li><a href="Geekaz-Team.html">Meet Our Team</a></li>
+                        <li><a href="Computer-Repair.html">Computer Repair</a></li>
+                        <li><a href="Coding.html">Coding and Robotics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Geekaz. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
