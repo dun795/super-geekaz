@@ -366,7 +366,45 @@
             </div>
         </div>
     </footer>
-
+<!-- Popup Contact Form Modal -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Contact Us</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+        <form id="popupContactForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name*</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name*</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Contact Number*</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="popupEmail">Email Address*</label>
+                <input type="email" id="popupEmail" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="popupMessage">Message</label>
+                <textarea id="popupMessage" name="message" class="form-control" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
