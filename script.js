@@ -467,3 +467,51 @@ if (mobileMenuBtn && navLinks) {
         navLinks.classList.toggle('active');
     });
 }
+        // Find the specific button in web.html
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all relevant buttons
+    const contactButtons = document.querySelectorAll('.btn.btn-primary');
+    const modal = document.getElementById('contactModal');
+    const closeModal = document.querySelector('.close-modal');
+    
+    // Add event listeners to buttons with specific text content
+    contactButtons.forEach(button => {
+        if (button.textContent.includes('Get in Touch') || button.textContent.includes('Get a Quote')) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+        }
+    });
+    
+    // Close modal with close button
+    if (closeModal) {
+        closeModal.addEventListener('click', closeModal);
+    }
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Open modal function with animation
+    function openModal() {
+        modal.classList.add('show');
+        // Allow DOM to update before applying the transform
+        setTimeout(() => {
+            document.querySelector('.modal-content').style.transform = 'translateY(0)';
+            document.querySelector('.modal-content').style.opacity = '1';
+        }, 10);
+    }
+    
+    // Close modal function with animation
+    function closeModal() {
+        document.querySelector('.modal-content').style.transform = 'translateY(-50px)';
+        document.querySelector('.modal-content').style.opacity = '0';
+        setTimeout(() => {
+            modal.classList.remove('show');
+        }, 300); // Match this to your transition duration
+    }
+});
