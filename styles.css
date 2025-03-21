@@ -1283,3 +1283,33 @@
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
 }
+
+
+
+.services .service-icon {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Optional: If you want to adjust the spacing around the icons */
+  .services .service-card {
+    text-align: center; /* Center the icon and text */
+  }
+  
+  /* Optional: If you also want to adjust the overall size of the service cards */
+  .services .service-card {
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  /*Optional: if you want to make icons even smaller on smaller screens */
+  @media (max-width: 768px){
+      .services .service-icon{
+          width: 40px;
+      }
+  }
+  
+  @media (max-width: 576px){
+      .services .service-icon{
+          width: 30px;
+      }
+  }
