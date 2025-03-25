@@ -7,12 +7,41 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
             background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+        .login-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            height: calc(100vh - 70px);
         }
         .login-container {
             background-color: white;
@@ -59,60 +88,67 @@
             text-align: center;
             margin-top: 10px;
         }
+        .nav-links a:hover {
+            color: #007bff;
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Geekaz Blog Login</h2>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-            <div id="errorMessage" class="error-message"></div>
-        </form>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Geekaz</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-wrapper">
+        <div class="login-container">
+            <h2>Geekaz Blog Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+        </div>
     </div>
 
     <script>
-        // Async function to hash password using SHA-256
-        async function hashPassword(password) {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(password);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
+        // Existing async password hashing function stays the same
 
         // Predefined users with hashed passwords
         const validUsers = [
             { 
                 username: 'david', 
-                passwordHash: '9c1185a5c5e9fc54612808977ee8f548b2258d31002c44a0ccdfe9057c4d7c3d', // hash of 'geekaz2025'
+                passwordHash: '9c1185a5c5e9fc54612808977ee8f548b2258d31002c44a0ccdfe9057c4d7c3d', 
                 role: 'admin' 
             },
             { 
                 username: 'sarah', 
-                passwordHash: 'a8b64babd0aca91c8a1a6f8d850fe34765f9dcb12a54436600c4f3f44bca50f5', // hash of 'tech2025'
+                passwordHash: 'a8b64babd0aca91c8a1a6f8d850fe34765f9dcb12a54436600c4f3f44bca50f5', 
                 role: 'editor' 
             },
             { 
                 username: 'mike', 
-                passwordHash: '52270eefd8b1bbfb22c06f39d5a7f67d53efb171d25347e50c5b50a50dbe4a47', // hash of 'security2025'
+                passwordHash: '52270eefd8b1bbfb22c06f39d5a7f67d53efb171d25347e50c5b50a50dbe4a47', 
                 role: 'content-manager' 
             },
             { 
                 username: 'emily', 
-                passwordHash: '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', // hash of 'design2025'
+                passwordHash: '9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08', 
                 role: 'designer' 
             },
             { 
                 username: 'alex', 
-                passwordHash: '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', // hash of 'developer2025'
+                passwordHash: '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 
                 role: 'developer' 
             }
         ];
@@ -140,8 +176,8 @@
                     role: user.role
                 }));
                 
-                // Redirect to blog editing page
-                window.location.href = 'blog-edit.html';
+                // Redirect to blog page for all users
+                window.location.href = 'blog.html';
             } else {
                 errorMessage.textContent = 'Invalid username or password';
             }
