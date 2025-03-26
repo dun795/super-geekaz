@@ -1,0 +1,18 @@
+[
+  {
+      "id": 1,
+      "title": "The Future of AI in Web Development",
+      "category": "Technology",
+      "date": "2025-03-15",
+      "image": "images/ai-web-dev.jpg",
+      "excerpt": "Exploring how artificial intelligence is transforming web development practices and tools."
+  },
+  {
+      "id": 2,
+      "title": "Cybersecurity Trends for 2025",
+      "category": "Security",
+      "date": "2025-02-20",
+      "image": "images/cybersecurity.jpg", 
+      "excerpt": "A comprehensive look at emerging cybersecurity threats and protection strategies."
+  }
+]
