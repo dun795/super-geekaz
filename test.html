@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Ensure proper scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
+  <style>
+    /* Portfolio Grid: Using CSS Grid for responsive layout */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Portfolio Item Styles */
+    .portfolio-item {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    /* Image takes full width and adjusts height */
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Portfolio Info Styling */
+    .portfolio-info {
+      padding: 15px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Hover effects for better interactivity */
+    .portfolio-item:hover {
+      transform: scale(1.02);
+    }
+
+    /* Button Styling */
+    .btn {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .portfolio-info {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="images/admin_panel4.png" alt="E-commerce Website Project">
+      <div class="portfolio-info">
+        <h3>Local Retail E-commerce</h3>
+        <p>Custom online store with integrated payment processing and inventory management</p>
+        <a href="#" class="btn btn-sm">View Case Study</a>
+      </div>
+    </div>
+    <!-- Additional portfolio items can be added here -->
+  </div>
+</body>
+</html>
+<!-- End of test.html --> 
+ In this example, we have a simple HTML structure with a grid layout for the portfolio items. The CSS styles define the layout and appearance of the portfolio items, including the image, title, description, and button. The styles also include hover effects for better interactivity and responsive adjustments for smaller screens. 
+ You can customize the styles further to match your design requirements and add more portfolio items as needed. 
+ Conclusion 
+ In this tutorial, we explored how to create a responsive portfolio using HTML and CSS. We covered the basic structure of a portfolio page, including a grid layout for displaying portfolio items, and added styles to enhance the appearance and interactivity of the portfolio. 
+ By following the examples and guidelines provided in this tutorial, you can create a responsive portfolio to showcase your work effectively on different devices and screen sizes. 
+ If you’re looking to build a more advanced portfolio website, you may consider using a front-end framework like Bootstrap or a JavaScript library like React to create a more dynamic and interactive portfolio. 
+ To learn more about web development, check out our  Web Development category. 
+ About us: Career Karma is a platform designed to help job seekers find, research, and connect with job training programs to advance their careers.  Learn about the CK publication. 
+ Want to take action? 
+ Joy Dantong
